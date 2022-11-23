@@ -3,17 +3,17 @@ package com.alejandro;
 /**
  * @author Alejandro
  */
-public class Cliente {
-    private final int id;
+public class Cliente{
+    private final int clientId;
     private final int[] carroCompra;
 
-    public Cliente(int id, int[] carroCompra) {
-        this.id = id;
+    public Cliente(int clientId, int[] carroCompra) {
+        this.clientId = clientId;
         this.carroCompra = carroCompra;
     }
 
-    public int getId() {
-        return id;
+    public int getClientId() {
+        return clientId;
     }
 
     public int[] getCarroCompra() {

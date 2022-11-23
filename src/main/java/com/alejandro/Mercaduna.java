@@ -14,34 +14,40 @@ import java.util.concurrent.TimeUnit;
 public class Mercaduna {
     ExecutorService executorService;
     ThreadFactory factory = new ThreadFactoryBuilder().setNameFormat("Cajera %d").build();
+    boolean cerrado = false;
 
     public void abrirCajas(List<Cliente> clientes, int cajeras) {
         try {
             executorService = Executors.newFixedThreadPool(cajeras, factory);
             System.out.println("Abre el supermercado");
             for (Cliente cliente : clientes) {
-                Runnable cajera = new Cajera(cliente);
-                executorService.execute(cajera);
+                executorService.execute(new Cajera(cliente));
+            }
+            executorService.shutdown();
+            cerrado = true;
+            try {
+                executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+                cerrarCajas();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (executorService.isTerminated()){
-            executorService.shutdown();
-            cerrarCajas();
-        }
+
+
     }
 
     public void cerrarCajas() {
-        try {
-
-            if (!executorService.awaitTermination(100, TimeUnit.MICROSECONDS)) {
-                System.out.println("Cerrando el mercaduna...");
-                System.exit(0);
-            }
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//
+//            if (!executorService.awaitTermination(100, TimeUnit.MICROSECONDS)) {
+//                System.out.println("Cerrando el mercaduna...");
+//                System.exit(0);
+//            }
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
         System.out.println("Mercaduna cerrado");
     }
 
