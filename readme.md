@@ -4,6 +4,8 @@ Ejercicio de programación con hilos realizado para la asignatura de programaci�
 y servicios del grado superior de desarrollo de aplicaciones multiplataforma.
 
 ## Enunciado
+
+<div style="text-align: justify">
     En esta actividad vamos a hacer un programa que simule el trabajo de una cajera
     en un supermercado simulando el cobro a los clientes. Tendremos tres clientes y
     tres cajeras, la cajera debe cobrar la compra cliente a cliente, es decir que primero
@@ -14,6 +16,7 @@ y servicios del grado superior de desarrollo de aplicaciones multiplataforma.
     con [1,5,2] significa que el cliente va a comprar 3 productos y que la cajera tarda en
     procesar el producto “1” un segundo, el producto “2” cinco segundos y el producto
     “3” dos segundos, con lo cual, tardará en cobrar todos los productos 8 segundos.
+ </div>
 
 ## Planteamiento
 
