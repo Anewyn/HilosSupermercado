@@ -19,7 +19,7 @@ public class Mercaduna {
     public void abrirCajas(List<Cliente> clientes, int cajeras) {
         try {
             executorService = Executors.newFixedThreadPool(cajeras, factory);
-            System.out.println("Abre el supermercado");
+            System.out.println("Abre el Mercaduna");
             for (Cliente cliente : clientes) {
                 executorService.execute(new Cajera(cliente));
             }
@@ -39,15 +39,6 @@ public class Mercaduna {
     }
 
     public void cerrarCajas() {
-//        try {
-//
-//            if (!executorService.awaitTermination(100, TimeUnit.MICROSECONDS)) {
-//                System.out.println("Cerrando el mercaduna...");
-//                System.exit(0);
-//            }
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
         System.out.println("Mercaduna cerrado");
     }
 
