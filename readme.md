@@ -30,7 +30,7 @@ gestionar la cola de clientes, cada cajera se encargará de procesar la compra d
 cliente nuevo en cuanto termine con el actual. Si al terminar no quedan más clientes el programa terminará su
 ejecución con éxito.
 
-## Dependencias y enlaces a la documentación 🛠️
+## Enlaces a la documentación 🛠️
 
 #### [Executors](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executors.html)
 #### [Executor](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executor.html)
